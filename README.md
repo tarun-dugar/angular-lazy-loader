@@ -15,14 +15,9 @@ Usage
 
     angular.module('yourApp', ['angular-lazy-loader'])
 
-3. Add the directive 'angular-lazy-load' to the div within which you want to lazy load images and iframes. Example:
-
-    <body angular-lazy-load> //this lazy loads images and iframes inside the body tag
-    </body>
-
-4. Replace 'src' attribute of <img> and <iframe> tags with 'data-src'. Example:
-
-    <img data-src="<your image url>"/>
+3. Add the attribute 'angular-lazy-load' to the div within which you want to lazy load images and iframes.
+    
+4. Replace 'src' attribute of 'img' and 'iframe' tags with 'data-src'.
 
 Demo
 -----------
