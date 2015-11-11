@@ -11,11 +11,11 @@ Usage
 -----------
 
 1. Include angular-lazy-loader.min.js after the angularjs library.
-2. Add a 'angular-lazy-loader' module to your app as follows:
+2. Add the 'angular-lazy-loader' module to your app as follows:
 
     angular.module('yourApp', ['angular-lazy-loader'])
 
-3. Add the attribute 'angular-lazy-load' to the div within which you want to lazy load images and iframes.
+3. Add the attribute (directive) 'angular-lazy-load' to the HTML element within which you want to lazy load images and iframes.
     
 4. Replace 'src' attribute of 'img' and 'iframe' tags with 'data-src'.
 
