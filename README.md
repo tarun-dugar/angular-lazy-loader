@@ -1,6 +1,6 @@
 #angular-lazy-loader
 
-AngularJS Lazy Loading Directive
+AngularJS lazy loading directive for lazy loading images and videos(via iframe).
 
 Description
 -----------
