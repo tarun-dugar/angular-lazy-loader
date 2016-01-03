@@ -1,3 +1,4 @@
+#angular-lazy-loader
 
 AngularJS Lazy Loading Directive
 
