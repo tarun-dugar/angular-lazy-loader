@@ -7,6 +7,12 @@ Description
 
 A very basic and lightweight AngularJS directive to lazy load images and iframes inside the directive element. The media (iframe/image) gets loaded only when completely inside the viewport.
 
+Installation
+------------
+
+```code
+npm install angular-lazy-loader
+```
 
 Usage
 -----------
