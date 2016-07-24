@@ -14,6 +14,11 @@ Installation
 npm install angular-lazy-loader
 ```
 
+Demo
+-----------
+
+http://tarun-dugar.github.io/angular-lazy-loader/
+
 Usage
 -----------
 
@@ -40,10 +45,5 @@ Usage
     ```html
     <img data-src="<your_url>" />
     ```
-
-Demo
------------
-
-http://tarun-dugar.github.io/angular-lazy-loader/
 
 
