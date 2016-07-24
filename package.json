@@ -1,0 +1,29 @@
+{
+  "name": "angular-lazy-loader",
+  "version": "1.0.0",
+  "description": "angularjs directive for lazy loading images and embedded videos",
+  "main": "src/angular-lazy-loader.min.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarun-dugar/angular-lazy-loader.git"
+  },
+  "keywords": [
+    "javascript",
+    "angularjs"
+  ],
+  "author": "Tarun Dugar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tarun-dugar/angular-lazy-loader/issues"
+  },
+  "homepage": "https://github.com/tarun-dugar/angular-lazy-loader#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

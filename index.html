@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Lazy Loader</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body ng-app="demoLazyLoader" ng-controller="demoCtrl">
+	<header>
+		<h2>angularLazyLoader</h2>
+	</header>
+	<div class="main-container">
+		<main>
+			<section angular-lazy-load>
+				<h2>Scroll To Load</h2>
+				<p>Register the lazy loader directive on a container element to lazy load images when they enter the browser window viewport. Also, by default, the images/videos load whenever their top or bottom plane is in the viewport. You can set the <b>threshold</b> attribute that accepts a pixel value to load the asset when it is 'threshold' pixels away (vertically) from the viewport.</p>
+				<div class="center content-padding">
+					<div>
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+					</div>
+					<div>
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+					</div>
+					<div>
+						<img data-src="http://vignette4.wikia.nocookie.net/pokemon/images/5/55/004Charmander_OS_anime_3.png" alt="Scroll to load...">
+					</div>
+					<div>
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+					</div>
+					<div>
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+					</div>
+					<div>
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+					</div>
+					<div>
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+					</div>
+				</div>
+			</section>
+			<section angular-lazy-load>
+				<h2>ngIf caveat</h2>
+				<p>If an image/video was inside an <code>ngIf</code> block, you will have to load it programmatically by executing <code>$scope.$emit('selectiveLoad')</code> when the <code>ngIf</code> expression evaluates to true.</p>
+				<div class="center content-padding">
+					<div ng-if="true" class="inline-block forty">
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Click button to load...">
+					</div>
+					<div class="inline-block forty">
+						<button ng-click="load()">Load Programatically!</button>
+					</div>
+				</div>
+				<div class="content-padding">
+					<i><b>Edge Case:</b> Sometimes, <code>$scope.$emit('selectiveLoad')</code> may be fired before the lazy loader directive has been registered. In such a case, just wrap the <code>$emit</code> inside a <code>setTimeout</code> or <code>$timeout</code></i>
+				</div>
+			</section>
+			<section>
+				<h2>Lazy loading inside scrollable container</h2>
+				<p>Register the lazy loader directive on the scrollable container to lazy load assets when the container is scrolled instead of when the window is scrolled.</p>
+				<div class="center content-padding">
+					<div class="scrollable inline-block" angular-lazy-load>
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+						<img data-src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png" alt="Scroll to load...">
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.20/angular.min.js"></script>
+	<script src="src/angular-lazy-loader.js"></script>
+	<script src="src/app.js"></script>
+</body>
+</html>

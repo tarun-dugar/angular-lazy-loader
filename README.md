@@ -5,7 +5,7 @@ AngularJS lazy loading directive for lazy loading images and videos(via iframe).
 Description
 -----------
 
-A very basic and lightweight AngularJS directive to lazy load images and iframes inside the directive element. The media (iframe/image) gets loaded only when completely inside the viewport.
+A 1 kB minimalistic and lightweight AngularJS directive to lazy load images and iframes.
 
 Installation
 ------------
@@ -28,6 +28,13 @@ Usage
     <div angular-lazy-load>
     </div>
     ```
+
+4. Optionally, set the threshold attribute that accepts a pixel value to load the asset when it is 'threshold' pixels away (vertically) from the viewport.
+
+    ```javascript
+    <div angular-lazy-load threshold="200">
+    </div>
+    ```
     
 4. Replace 'src' attribute of 'img' and 'iframe' tags with 'data-src':
     ```html
@@ -37,16 +44,6 @@ Usage
 Demo
 -----------
 
-An example has been included in the 'example' folder in the repository. 
-
-
-Future Scope
-------------
-
-1. Will add basic animation support for DaneDen's 'animate.css': https://daneden.github.io/animate.css/
-
-2. Support for lazy loading media element when it is partially in the viewport.
-
-3. All suggestions and feature requests are welcome!
+http://tarun-dugar.github.io/angular-lazy-loader/
 
 
