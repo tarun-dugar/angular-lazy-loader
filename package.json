@@ -1,6 +1,6 @@
 {
   "name": "angular-lazy-loader",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "angularjs directive for lazy loading images and embedded videos",
   "main": "src/angular-lazy-loader.min.js",
   "directories": {
