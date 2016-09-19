@@ -64,25 +64,27 @@
 
 				getElements();
 
-				//listens for partials loading events using ng-include
-				scope.$on('$includeContentLoaded', function(event, url) {
+				function reloadElements () {
 					$timeout(getElements, 0);
-				});
+				}
+
+				function reloadMedia ( ) {
+					$timeout(loadMedia, 0);
+				}
+				//listens for partials loading events using ng-include
+				scope.$on('$includeContentLoaded', reloadElements);
 
 				//listens for selective loading, that is, if the developer using this directive wants to load the elements programmatically he can emit a selectiveLoad event
-				$rootScope.$on('selectiveLoad', function() {
-					$timeout(getElements, 0);
-				});
+				$rootScope.$on('selectiveLoad', reloadElements);
 
 				//calls loadMedia for each window scroll event
-				angular.element($window).bind('scroll', function() {
-					$timeout(loadMedia, 0);
-				});
+				angular.element($window).bind('scroll', reloadMedia);
+
+				//calls loadMedia for each window scroll event
+				angular.element($window).bind('resize', reloadMedia);
 
 				//calls loadMedia for each element scroll event
-				angular.element(element).bind('scroll', function() {
-					$timeout(loadMedia, 0);
-				});
+				angular.element(element).bind('scroll', reloadMedia);
 			}
 		}
 	}])
