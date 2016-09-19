@@ -1,27 +1,26 @@
 ;(function() {
+	"use strict"
 	var app = angular.module('angular-lazy-loader', [])
 	.directive('angularLazyLoad', ['$window', '$timeout', '$rootScope', function($window, $timeout, $rootScope) {
 		return {
 			restrict: 'EA',
 
 			//child scope instead of isolate scope because need to listen for ng-include load events from other scopes
-			scope: true, 
+			scope: true,
 			link: function(scope, element, attrs) {
-				var images, 
-					videos
+				var elements = [],
 					threshold = Number(attrs.threshold) || 0;
 
-				//gets all img(s), iframe(s) with the 'data-src' attribute and changes it to 'src' 
+				//gets all img(s), iframe(s) with the 'data-src' attribute and changes it to 'src'
 				function getElements() {
-					
+
 					//fetch all image elements inside the current element
-					images = Array.prototype.slice.call(element[0].querySelectorAll('img[data-src]'));
-
 					//fetch all iframe elements inside the current element
-					videos = Array.prototype.slice.call(element[0].querySelectorAll('iframe[data-src]'));
+					// fetch all divs inside the current element
 
+					elements =  Array.prototype.slice.call(element[0].querySelectorAll('img[data-src], iframe[data-src], div[data-src]'));
 					//if images and videos were found call loadMedia
-					if(images.length > 0 || videos.length > 0) {
+					if(elements.length > 0 ) {
 						loadMedia();
 					}
 				}
@@ -39,20 +38,28 @@
 
 				//replaces 'data-src' with 'src' for the elements found.
 				function loadMedia() {
+					elements = elements.reduce(function ( arr, item ) {
+						var src = item.getAttribute("data-src");
 
-					for(var i = images.length - 1; i >= 0; i--) {
-						if(inViewPort(images[i])) {
-							images[i].src = images[i].getAttribute('data-src');
-							images.splice(i, 1);
+						if ( !inViewPort ( item) ) {
+							arr.push(item);
+							return arr;
 						}
-					}
 
-					for(i = videos.length - 1; i >= 0; i--) {
-						if(inViewPort(videos[i])) {
-							videos[i].src = videos[i].getAttribute('data-src');
-							videos.splice(i, 1);
+						switch(item.tagName) {
+							case "IMG":
+							case "IFRAME":
+								item.src = src;
+								break;
+							case "DIV":
+								item.style.backgroundImage = "url("+src+")";
+								break;
+							default:
+								arr.push(item);
 						}
-					}
+
+						return arr;
+					}, []);
 				};
 
 				getElements();
