@@ -5,7 +5,7 @@ AngularJS lazy loading directive for lazy loading images and videos(via iframe).
 Description
 -----------
 
-A 1 kB minimalistic and lightweight AngularJS directive to lazy load images and iframes.
+A 1 kB minimalistic and lightweight AngularJS directive to lazy load images, background images, and iframes.
 
 Installation
 ------------
@@ -23,27 +23,31 @@ Usage
 -----------
 
 1. Include angular-lazy-loader.min.js after the angularjs library.
-2. Add the 'angular-lazy-loader' module to your app as follows:
+2. Or, you can use `require`:
+    ```javascript
+    var lazyLoader = require('angular-lazy-loader');
+    ```
+
+3. Add the 'angular-lazy-loader' module to your app as follows:
     ```javascript
     angular.module('yourApp', ['angular-lazy-loader'])
     ```
 
-3. Add the attribute (directive) 'angular-lazy-load' to the HTML element within which you want to lazy load images and iframes:
+4. Add the attribute (directive) 'angular-lazy-load' to the HTML element within which you want to lazy load images and iframes:
     ```javascript
     <div angular-lazy-load>
     </div>
     ```
 
-4. Optionally, set the threshold attribute that accepts a pixel value to load the asset when it is 'threshold' pixels away (vertically) from the viewport.
+5. Optionally, set the threshold attribute that accepts a pixel value to load the asset when it is 'threshold' pixels away (vertically) from the viewport.
 
     ```javascript
     <div angular-lazy-load threshold="200">
     </div>
     ```
     
-4. Replace 'src' attribute of 'img' and 'iframe' tags with 'data-src':
+6. Replace 'src' attribute of 'img', 'iframe', and 'div' tags with 'data-src':
     ```html
     <img data-src="<your_url>" />
     ```
-
-
+    

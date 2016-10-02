@@ -1,7 +1,7 @@
 {
   "name": "angular-lazy-loader",
   "version": "2.0.0",
-  "description": "angularjs directive for lazy loading images and embedded videos",
+  "description": "angularjs directive for lazy loading images, background images, and embedded videos",
   "main": "src/angular-lazy-loader.min.js",
   "directories": {
     "example": "example"
@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/tarun-dugar/angular-lazy-loader#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-rename": "^1.2.2"
   }
 }

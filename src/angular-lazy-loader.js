@@ -41,7 +41,7 @@
 					elements = elements.reduce(function ( arr, item ) {
 						var src = item.getAttribute("data-src");
 
-						if ( !inViewPort ( item) ) {
+						if (!inViewPort ( item)) {
 							arr.push(item);
 							return arr;
 						}

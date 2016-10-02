@@ -65,6 +65,8 @@ code.dark {
 	height: 300px;
 	overflow: auto;
 	width: 300px;
+	border: 1px solid #e6e6e6;
+	overflow-y: scroll;
 }
 
 .content-padding {
